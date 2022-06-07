@@ -4,7 +4,7 @@
   {% comment %} table populated with the students {% endcomment %}
 
     <div class="flex m-4">
-      <a href="{% url 'students:new_course' %}">Добави курс</a>
+      <a href="{% url 'students:new_course' %}" class="bg-indigo-600 text-white px-3 py-1">Добави курс</a>
     </div>
     <div class="flex w-full items-center">
       {% include "partials/coursesTable.html" with courses=courses %}
