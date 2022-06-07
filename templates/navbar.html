@@ -1,0 +1,23 @@
+<div class="flex space-x-6 p-4 bg-gray-900">
+  {% if user.is_superuser %}
+    <div class="text-slate-200 font-bold py-1">
+      <a href="{% url 'students:students' %}">Студенти</a></div>
+    <div class="text-slate-200 font-bold py-1" >
+      <a href="{% url 'students:courses' %}">Курсове</a></div>
+    
+  {% endif %}
+
+  {% if user.is_authenticated %}
+  <div class="text-slate-200 font-bold text-slate-200 px-2 py-1 rounded-md">
+    <a href="{% url 'accounts:profile' %}">Профил</a>
+    </div>
+    <div class="text-slate-200 font-bold bg-red-600 text-slate-200 px-2 py-1 rounded-md">
+      <a href="{% url 'accounts:logout' %}">Изход</a>
+      </div>
+  {% else %}
+    <div class="text-slate-200 font-bold bg-green-600 px-2 py-1 rounded-md">
+      <a href="{% url 'accounts:login' %}">Вход</a></div>
+    <div class="text-slate-200 font-bold bg-indigo-500 px-2 py-1 rounded-md">
+      <a href="{% url 'accounts:register' %}">Регистрация</a></div>
+  {% endif %}
+</div>

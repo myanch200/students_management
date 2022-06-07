@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% comment %} table populated with the students {% endcomment %}
+   <div class="flex m-4">
+     <a href="{% url 'students:new_student' %}">Добави студент</a>
+   </div>
+
+    {% include "partials/studentsTable.html" with students=students %}
+
+{% endblock content %}
+
